@@ -7,8 +7,8 @@ const Grid = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRedOffset((prev) => (prev - 11 + gridSize) % gridSize); // Moving diagonal animation in the opposite direction
-    }, 20); // Adjusted speed for smooth transition
+      setRedOffset((prev) => (prev - 11 + gridSize) % gridSize); 
+    }, 300); 
 
     return () => clearInterval(interval);
   }, []);
@@ -30,7 +30,7 @@ const Grid = () => {
 
   // Moving red diagonal
   const isRedDiagonal = (num) => {
-    return (num + redOffset) % 11 === 0; // Moves diagonally in the opposite direction
+    return (num + redOffset) % 9 === 0; 
   };
 
   return (
